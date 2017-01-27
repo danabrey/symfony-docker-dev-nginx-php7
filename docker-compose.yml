@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+    nginx:
+        build: ./docker/nginx
+        ports:
+            - "80:80"
+        volumes:
+            - ./app:/var/www/web
+            - ./docker/nginx/config/sites:/etc/nginx/conf.d
+    phpfpm:
+        build: ./docker/phpfpm
+        volumes:
+            - ./app:/var/www/web
