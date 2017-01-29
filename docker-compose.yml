@@ -6,9 +6,9 @@ services:
         ports:
             - "80:80"
         volumes:
-            - ./app:/var/www/web
+            - ./app:/var/www/app
             - ./docker/nginx/config/sites:/etc/nginx/conf.d
     phpfpm:
         build: ./docker/phpfpm
         volumes:
-            - ./app:/var/www/web
+            - ./app:/var/www/app
