@@ -8,6 +8,8 @@ COPY config/nginx.conf /etc/nginx/nginx.conf
 
 VOLUME ["/var/www", "/etc/nginx/conf.d"]
 
+RUN usermod -u 1000 www-data
+
 # Expose HTTP/HTTPS ports
 EXPOSE 80 443
 

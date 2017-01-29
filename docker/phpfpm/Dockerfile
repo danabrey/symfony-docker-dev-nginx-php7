@@ -14,6 +14,8 @@ RUN apt-get update && apt-get install -y \
 	&& docker-php-ext-install opcache \
 	&& docker-php-ext-install mbstring
 
+RUN usermod -u 1000 www-data
+
 EXPOSE 9000
 
 CMD ["php-fpm"]
